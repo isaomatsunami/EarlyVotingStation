@@ -2,10 +2,14 @@
 
 This is a network analysis introduction with QGIS
 
-1. *Centroids*: create centroid point layer from "population" mesh
+Open QGIS and *Add Vector Layer* 4 files(votingStations.geojson, precincts.geojson, population.shp, OSSroad.shp) in the basedata directory. All files are in EPSG4326(WGS84).
+
+1. *Centroids*: create centroid point layer from "population" mesh.
+
 	rename the output layer as populationCentroid
 
 2. *Reproject Layer*:  Reproject all layers to EPSG2450(unit=meter projection for Hamamatsu area in Japan)
+
 	rename the output layer for votingStations as votingStations2450
 	rename the output layer for OSSroad as OSSroad2450
 	rename the output layer for precinct as precinct2450
@@ -43,7 +47,8 @@ In this case, what we want to do is "layer(population centroids) to layer(voting
  You have to make "perfect" road network from OpenStreetMap data. All nodes must be connected in a single network. No "island of road" is allowed.
 
  In this case, I removed highways (voters will not use toll ways, probably), which made ramp(slip road) disconnected from the whote network.
- There are many disconnected road in OSS data, such as roads inside factory, which must be reoved beforehand.
+ There are many disconnected road in OSS data, such as roads inside factory, which must be removed beforehand.
+
  Quality of OSS data depends on the skill of the local community. Check by yourself, for example, if the crossroad is connected at a single shared node. If not, you have to do additional work. (I spent a whole day to make OSSroad.shp for Hamamatsu)
 
 
