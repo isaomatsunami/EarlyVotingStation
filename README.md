@@ -1,4 +1,4 @@
-# EarlyVotingStation
+## EarlyVotingStation
 
 This is a network analysis introduction with QGIS
 
@@ -11,13 +11,17 @@ Open QGIS and *Add Vector Layer* 4 files(votingStations.geojson, precincts.geojs
 2. *Reproject Layer*:  Reproject all layers to EPSG2450(unit=meter projection for Hamamatsu area in Japan)
 
 	rename the output layer for votingStations as votingStations2450
+
 	rename the output layer for OSSroad as OSSroad2450
+
 	rename the output layer for precinct as precinct2450
+
 	rename the output layer for populationCentroid layer as populationCentroid2450
 
 3. *Join attributes by nearest*: join populationCentroid2450 with precinct2450
 
 	rename the output layer for populationCentroid2450 as populationCentroidWithID2450
+
 	check populationCentroidWithID2450 has attribute(field) "precinctID"
 
 BTW QGIS Processing Toolbox has 3 options of network analysis
@@ -26,7 +30,7 @@ BTW QGIS Processing Toolbox has 3 options of network analysis
     2) Shortest path(point to layer) 
     3) Shortest path(layer to point) 
 
-In this case, what we want to do is "layer(population centroids) to layer(voting station)" calculation.
+In this case, what we want to do is "layer(population centroids) to layer(*its* voting station)" calculation.
 
 4. Open Python Console/Open calcDrivingTime.py with Editor and Run it
 
@@ -40,6 +44,7 @@ In this case, what we want to do is "layer(population centroids) to layer(voting
 	You
 
 	check the table has meshCode, precinctID, population, driving time(cost)
+
 	export the table for further analysis.
 
 #### Note
